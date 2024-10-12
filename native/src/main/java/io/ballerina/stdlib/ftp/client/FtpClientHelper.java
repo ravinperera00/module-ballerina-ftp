@@ -259,7 +259,8 @@ class FtpClientHelper {
             byte[] bytes = arrayValue.getBytes();
             bufferHolder.setBuffer(bytes);
             bufferHolder.setTerminal(false);
-        } catch (BError ignored) {
+        } catch (BError bError) {
+            log.error(bError.getMessage());
         }
     }
 
@@ -270,7 +271,8 @@ class FtpClientHelper {
                     null, null).get();
             entity.addNativeData(ENTITY_BYTE_STREAM, null);
             bufferHolder.setTerminal(true);
-        } catch (BError ignored) {
+        } catch (BError bError) {
+            log.error(bError.getMessage());
         }
     }
 

@@ -29,6 +29,10 @@ import static io.ballerina.stdlib.ftp.util.FtpConstants.ENTITY_BYTE_STREAM;
  * Util methods for FTP operations.
  */
 public class Util {
+    private Util() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static Object getResult(CompletableFuture<Object> balFuture) {
         try {
             return balFuture.get();
